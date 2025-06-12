@@ -1,0 +1,20 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+      <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/account-creation.css') }}">
+{% endblock %}
+
+{% block headercontent %}
+      <p class="account-creation-header">Create an account!</p>
+{% endblock %}
+
+{% block maincontent %}
+      <div class="account-creation-form" id="account-creation-form">
+        <form action="/accountcreation" method="post" enctype="multipart/form-data">
+          <input class="account-field" type="text" name="email" title="Enter your email" placeholder="Enter your email"><br>
+          <input class="account-field" type="password" name="password" title="Create password" placeholder="Create password"><br>
+          <input class="account-field account-submit" type="submit" title="Create Account!" placeholder="Create Account!" value="Create Account!">
+        </form>
+      </div>
+      <p class="already-account-created"><a class="already-hyperlink" href="/home">Already have an account? Log in!</a></p>
+{% endblock %}

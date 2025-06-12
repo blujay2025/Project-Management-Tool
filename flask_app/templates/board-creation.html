@@ -1,0 +1,28 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+      <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/board-creation.css') }}">
+{% endblock %}
+
+{% block extrajs %}
+      <script src="{{ url_for('static', filename='main/js/board-creation.js') }}" defer></script>
+{% endblock %}
+
+{% block headercontent %}
+      <p class="board-header">Create a board!</p>
+{% endblock %}
+
+{% block maincontent %}
+      <div class="board-creation-form">
+        <form id="board-creation-form" action="/boardcreationprocess" method="post" enctype="multipart/form-data">
+          <input class="board-creation-field" type="text" name="boardname" title="Enter your board's name" placeholder="Enter your board's name"><br>
+          <input type="hidden" id="memberIdInput" name="memberIdCount" value="1">
+          <input class="board-creation-field" type="text" name="member1" title="Enter member's email" placeholder="Enter member's email"><br>
+          <input class="board-creation-field board-creation-submit" id="board-creation-submit" type="submit" title="Create board!" placeholder="Create board!" value="Create board!">
+        </form>
+      </div>
+      <div class="more-members-div">
+            <button class="more-members-button" id="more-members">Add more members!</button>  
+      </div>
+      <p class="existing-project"><a class="existing-project-hyperlink" href="/projects">Want to view an existing board?</a></p>
+{% endblock %}

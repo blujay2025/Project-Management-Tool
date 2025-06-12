@@ -1,0 +1,102 @@
+.board-header {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.board {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.board-list {
+  flex: 1;
+  margin: 0 15px;
+  padding: 15px;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  background-color: #2e5a88;
+  color: #ffffff;
+}
+
+.card textarea {
+  resize: none;
+  width: 97%;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #000000;
+}
+
+.card {
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #fa8072;
+  border-radius: 10px;
+}
+
+.board-logout {
+  display: none;
+}
+
+.back-board-link {
+  color: white;
+}
+
+.board-back {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.back-board-link:visited {
+  color: white;
+}
+
+
+.chat-button {
+  clear: both;
+  position: fixed;
+  display: block;
+  list-style-type: none;
+  right: -1.8em;
+  bottom: 20%;
+}
+
+
+.chat-button > li {
+  padding: 15px;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Arial;
+}
+.chat-button > li a,
+.chat-button > li a:visited {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 650px) {
+  .board {
+    flex-direction: column;
+  }
+
+  .logout-style {
+    display: none;
+  }
+
+  .board-logout {
+    display: block;
+    text-align: center;
+  }
+  .board-logout .board-logout-link,
+  .board-logout .board-logout-link:visited {
+    color: #ffffff;
+  }
+}

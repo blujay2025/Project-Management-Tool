@@ -1,0 +1,69 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+      <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/board.css') }}">
+{% endblock %}
+
+{% block headercontent %}
+      <p class="board-header">{{ board_name }}</p>
+      <p class="board-logout"><a class="board-logout-link" href="/logout">Logout!</a></p>
+{% endblock %}
+
+{% block maincontent %}
+      <ul class="chat-button" id="chat-button">
+            <li><a href='/chat/{{ board_name }}'>Go to chat!</a></li>
+      </ul>
+      <div class="board" id="board" data-board="{{ board_name }}">
+            <div class="board-list" id="todo" ondrop="dropIt(event)" ondragover="allowDrop(event)">
+                <h2 id="todo-title">To Do</h2>
+                {% for card in card_list %}
+                  {% if card['status'] == "todo" %}
+                        <div class="card" id="{{ card['card_id'] }}" draggable="true" ondragstart="dragStart(event)">
+                              <textarea class="card-text-area" id="card-text-area-{{ card['card_id'] }}" rows="5" cols="20" disabled onkeydown="textAreaUpdate(event)">{{ card['card_content'] }}</textarea>
+                              <button id="edit-button-todo-{{ card['card_id'] }}" class="edit-button">Edit Card</button>
+                              <button id="delete-button-todo-{{ card['card_id'] }}" class="delete-button">Delete Card</button>     
+                        </div>
+                  {% endif %}
+                {% endfor %}
+                <button id="to-do-add">Add Card</button>
+            </div>
+            
+            <div class="board-list" id="doing" ondrop="dropIt(event)" ondragover="allowDrop(event)">
+                <h2 id="doing-title">Doing</h2>
+                {% for card in card_list %}
+                  {% if card['status'] == "doing" %}
+                        <div class="card" id="{{ card['card_id'] }}" draggable="true" ondragstart="dragStart(event)">
+                              <textarea class="card-text-area" id="card-text-area-{{ card['card_id'] }}" rows="5" cols="20" disabled onkeydown="textAreaUpdate(event)">{{ card['card_content'] }}</textarea>
+                              <button id="edit-button-doing-{{ card['card_id'] }}" class="edit-button">Edit Card</button>
+                              <button id="delete-button-doing-{{ card['card_id'] }}" class="delete-button">Delete Card</button>
+                        </div>
+                  {% endif %}
+                {% endfor %}
+                <button id="doing-add">Add Card</button>
+            </div>
+            
+            <div class="board-list" id="completed" ondrop="dropIt(event)" ondragover="allowDrop(event)">
+                <h2 id="completed-title">Completed</h2>
+                {% for card in card_list %}
+                  {% if card['status'] == "completed" %}
+                        <div class="card" id="{{ card['card_id'] }}" draggable="true" ondragstart="dragStart(event)">
+                              <textarea class="card-text-area" id="card-text-area-{{ card['card_id'] }}" rows="5" cols="20" disabled onkeydown="textAreaUpdate(event)">{{ card['card_content'] }}</textarea>
+                              <button id="edit-button-completed-{{ card['card_id'] }}" class="edit-button">Edit Card</button>
+                              <button id="delete-button-completed-{{ card['card_id'] }}" class="delete-button">Delete Card</button>
+                        </div>
+                  {% endif %}
+                {% endfor %}
+                <button id="completed-add">Add Card</button>
+            </div>
+      </div>
+
+      <p class="board-back"><a class="back-board-link" href="/existing-boards">Go back to your boards!</a></p>
+
+{% endblock %}
+
+
+
+{% block extrajs %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="{{ url_for('static', filename='main/js/board.js') }}" defer></script>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+      <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/projects.css') }}">
+{% endblock %}
+
+{% block headercontent %}
+      <p class="projects-header">What would you like to do?</p>
+{% endblock %}
+
+{% block maincontent %}
+      <div class="projects-box">
+        <button class="projects-button" id="new-project">Create a new board!</button>
+        <p class="projects-or">or</p>
+        <button class="projects-button" id="existing-project">View existing boards!</button>
+      </div>
+{% endblock %}
+
+
+{% block extrajs %}
+      <script src="{{ url_for('static', filename='main/js/projects.js') }}" defer></script>
+{% endblock %}
+
+

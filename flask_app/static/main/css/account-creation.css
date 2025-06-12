@@ -1,0 +1,55 @@
+.account-creation-header {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.account-creation-form {
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 50px auto;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 5px solid #000000;
+}
+
+.account-field {
+  font-size: 15px;
+  margin-top: 8%;
+  width: 20vw;
+  height: 5vh;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.account-submit {
+  color: #ffffff;
+  background-color: #77c3ec;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.account-submit:hover {
+  background-color: #040273;
+}
+
+.already-account-created {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+}
+
+.already-hyperlink:visited {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 650px) {
+  .account-field {
+    width: auto;
+  }
+}

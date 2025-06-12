@@ -1,0 +1,24 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+      <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/home.css') }}">
+{% endblock %}
+
+{% block headercontent %}
+      <p class="auth-header">Welcome to Project Management Tool!</p>
+{% endblock %}
+
+{% block maincontent %}
+      <div class="auth-box">
+        <button class="auth-button" id="sign-in">Login</button>
+        <p class="auth-or">or</p>
+        <button class="auth-button" id="create-account">Create Account</button>
+      </div>
+{% endblock %}
+
+
+{% block extrajs %}
+      <script src="{{ url_for('static', filename='main/js/home.js') }}" defer></script>
+{% endblock %}
+
+

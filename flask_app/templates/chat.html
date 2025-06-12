@@ -1,0 +1,70 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<p class="chat-header">{{ board_name }} Chat</p> 
+<div class="chat" id='chat' contenteditable>    
+</div>
+
+<form class="chat-form" id="chat-form">
+    <input class="chat-message" type="text" name="message" placeholder="Enter Your Message Here" required />
+    <button class="submit-chat" type="submit">Send-></button>
+</form>
+<div class="leave-chat-div">
+    <button class="leave-chat" id="leave-chat">Leave Chat</button>
+</div>
+{% endblock %}
+
+{% block extracss %}
+    <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/chat.css') }}">
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket;
+    $(document).ready(function(){
+        socket = io.connect('https://' + document.domain + ':' + location.port);
+
+        socket.on('connect', function() {
+            socket.emit('join_board', {
+                    projectName: '{{ board_name }}'
+            });
+        });
+        
+        socket.on('status', function(data) {     
+            let status_message  = document.createElement("p");
+            let text = document.createTextNode(data.msg);
+            let chat_element = document.getElementById("chat");
+            status_message.appendChild(text);
+            status_message.classList.add("status");
+            chat_element.appendChild(status_message);
+            $('#chat').scrollTop($('#chat')[0].scrollHeight);
+
+        });
+        
+        socket.on('message', function(data) {
+            let incoming_message  = document.createElement("p");
+            var combined_text = data.user + ': ' + data.msg
+            let text = document.createTextNode(combined_text);
+            let chat_element = document.getElementById("chat");
+            incoming_message.appendChild(text);
+            incoming_message.classList.add("message");
+            chat_element.appendChild(incoming_message);
+            $('#chat').scrollTop($('#chat')[0].scrollHeight);
+        });
+
+        $('#chat-form').submit(function(event) {
+            event.preventDefault();
+            let message = $('input[name="message"]').val();
+            socket.emit('message', { msg: message, roomName: '{{ board_name }}' });
+            $('input[name="message"]').val('');
+        });
+
+        $('#leave-chat').click(function() {
+            socket.emit('left', {roomName: '{{ board_name }}'});
+            window.location.href = "/board/{{ board_name }}";
+        });
+    });
+</script>
+{% endblock %}

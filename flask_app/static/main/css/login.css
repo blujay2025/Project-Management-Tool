@@ -1,0 +1,67 @@
+.login-header {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.login-form {
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 50px auto;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 5px solid #000000;
+}
+
+.login-field {
+  font-size: 15px;
+  margin-top: 8%;
+  width: 20vw;
+  height: 5vh;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.login-submit {
+  color: #ffffff;
+  background-color: #77c3ec;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.login-submit:hover {
+  background-color: #040273;
+}
+
+.no-account-created {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+}
+
+.no-account-hyperlink:visited {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+}
+
+.auth-fail-count {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+}
+
+.auth-fail-count > span.count {
+  color: #800000;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 650px) {
+  .login-field {
+    width: 50vw;
+  }
+}

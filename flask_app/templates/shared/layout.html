@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Management Tool</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css') }}">
+  {% block extracss %}{% endblock %}
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <article>
+    <!-- The header  -->
+    <header>
+      {% block headercontent %}{% endblock %}
+    </header>
+
+    <!-- The navigation bar -->
+    <nav>
+      <div class="nav-left">
+        {% block navcontent %}{% endblock %}
+      </div>
+      <div class="nav-right">
+        <button class="logout-style"><a class="logout-hyperlink" href="/logout">Log out!</a></button>
+      </div>
+    </nav>
+
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+    <!-- The footer of the file -->
+    <footer class="footer">
+      <!-- Footer information -->
+      <p>&copy; 2024 Ajay Kumar</p>
+    </footer>
+
+    </article>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #01a162;
+  margin: 0;
+}
+
+.nav-left {
+  float: left;
+}
+
+.nav-right {
+  background: #01a162;
+  float: right;
+  margin-right: 2%;
+}
+
+.logout-style {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 17px;
+  background-color: #4d4dff;
+  position: absolute;
+  top: 8%;
+  right: 8%;
+}
+
+.logout-style:hover {
+  background-color: #ff0800;
+}
+
+.logout-hyperlink {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 650px) {
+  .logout-style {
+    top: auto;
+    bottom: 20%;
+  }
+}

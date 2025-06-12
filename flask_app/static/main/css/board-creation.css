@@ -1,0 +1,76 @@
+.board-header {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.board-creation-form {
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 50px auto;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 5px solid #000000;
+}
+
+.board-creation-field {
+  font-size: 15px;
+  margin-top: 8%;
+  width: 20vw;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.board-creation-submit {
+  color: #ffffff;
+  background-color: #77c3ec;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.board-creation-submit:hover {
+  background-color: #040273;
+}
+
+.existing-project {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 10%;
+}
+
+.existing-project-hyperlink:visited {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+}
+
+.more-members-div {
+  text-align: center;
+}
+
+.more-members-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 17px;
+  background-color: #4d4dff;
+  padding: 20px;
+  width: 300px;
+}
+
+.more-members-button:hover {
+  background-color: #ff0800;
+}
+
+
+@media screen and (max-width: 650px) {
+  .board-creation-field {
+    width: 50vw;
+  }
+}

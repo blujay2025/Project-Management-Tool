@@ -1,0 +1,58 @@
+.existing-boards-header {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.project-item > ul {
+  margin-left: 8rem;
+  font-family: Arial;
+  font-size: 90%;
+  list-style: none;
+}
+
+.project-item > ul > li {
+  padding-bottom: 1%;
+}
+
+.existing-project-hyperlink {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+}
+
+.existing-project-hyperlink:visited {
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+}
+
+.project-item-button {
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  background-color: #800000;
+}
+
+.project-item-button:hover {
+  background-color: #000000;
+}
+
+.project-item-hyperlink {
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 650px) {
+  .project-item > ul {
+    margin-left: 2rem;
+  }
+}

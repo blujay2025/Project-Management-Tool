@@ -1,0 +1,28 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+      <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/login.css') }}">
+{% endblock %}
+
+{% block extrajs %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="{{ url_for('static', filename='main/js/login.js') }}" defer></script>
+{% endblock %}
+
+{% block headercontent %}
+      <p class="login-header">Log in!</p>
+{% endblock %}
+
+{% block maincontent %}
+      <div class="login-form" id="login-form">
+        <form>
+          <input class="login-field" type="email" id="email" name="email" title="Enter your email" placeholder="Enter your email" required><br>
+          <input class="login-field" type="password" id="password" name="password" title="Enter your password" placeholder="Enter your password" required><br>
+          <button class="login-field login-submit" type="button" title="Log in!" placeholder="Log in!" value="Log in!" id="login-button">Login</button>
+        </form>
+      </div>
+      <p class="auth-fail-count" id="auth-fail-count">Failed authentication attempts: <span class="count" id="count">0</span></p>
+      <p class="no-account-created"><a class="no-account-hyperlink" href="/home">Don't have an account? Create one!</a></p>
+{% endblock %}
+
+

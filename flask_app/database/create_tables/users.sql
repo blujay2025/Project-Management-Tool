@@ -1,0 +1,7 @@
+-- SQL code for creating "users" table
+CREATE TABLE IF NOT EXISTS `users` (
+`user_id`         int(11)  	   NOT NULL AUTO_INCREMENT	  COMMENT 'the id of this user',
+`email`           varchar(100) NOT NULL            		    COMMENT 'the email',
+`password`        varchar(256) NOT NULL                   COMMENT 'the password',
+PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT="Contains site user information";

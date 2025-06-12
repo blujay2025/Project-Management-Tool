@@ -1,0 +1,38 @@
+.projects-header {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.projects-box {
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 50px auto;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 5px solid #000000;
+}
+
+.projects-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 17px;
+  background-color: #4d4dff;
+}
+
+
+.projects-button:hover {
+  background-color: #ff0800;
+}
+
+.projects-or {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}

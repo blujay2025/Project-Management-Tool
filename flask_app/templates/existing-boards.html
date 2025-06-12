@@ -1,0 +1,29 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+      <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/existing-boards.css') }}">
+{% endblock %}
+
+{% block headercontent %}
+      {% if headercontent|length == 0 %}
+            <p class="existing-boards-header">You don't have any boards yet.</p>
+            <div style="text-align:center">
+                  <a class="existing-project-hyperlink" href="/board-creation">Create a new board!</a>
+            </div>
+      {% else %}
+            <p class="existing-boards-header">Here are the boards you're part of:</p>
+      {% endif %}
+{% endblock %}
+
+{% block maincontent %}
+      {% for project in existing_projects_list %}
+            <div class="project-item">
+                  <ul>
+                        <li>
+                              <button class="project-item-button"><a class="project-item-hyperlink" href="/board/{{ project['project_name'] }}">{{ project['project_name'] }}</a></button>
+                        </li>
+                  </ul>
+            </div>
+      {% endfor %}
+{% endblock %}
+
