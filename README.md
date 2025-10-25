@@ -14,4 +14,4 @@ As someone who's used Atlassian's Trello for practically all of my college progr
 - Containerization: Docker
 - Cloud Hosting: Google Cloud Platform
   
-Created by Ajay Kumar: <ajay.kumar.6703@gmail.com>
+Created by Ajay Kumar: <blujay2025@gmail.com>
